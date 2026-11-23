@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Демонстрационная версия сайта кафе «Ема» в Симферополе. Завтраки, пицца, роллы, паста и напитки. Адрес, график и контакты.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#24201b">
+<title>Ема — кафе в Симферополе | Демоверсия</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="menu-data.js" defer></script>
+<script src="app.js" defer></script>
+<script src="menu.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+<div class="demo-bar">Демонстрационный проект. Неофициальный сайт</div>
+<header class="shell header">
+  <a class="wordmark" href="index.html" aria-label="Ема, главная">ема<span>.</span></a>
+  <nav class="nav" aria-label="Основная навигация">
+    <a href="index.html#about">О кафе</a>
+    <a href="#visit">Контакты</a>
+  </nav>
+  <a class="button button-small button-outline" href="#menu" data-menu-category="all">Посмотреть меню</a>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="hero-image" data-parallax><img src="assets/hero.webp" srcset="assets/hero-small.webp 720w, assets/hero.webp 1440w" sizes="100vw" alt="" width="1440" height="960" fetchpriority="high"></div>
+    <div class="shell hero-content">
+      <p class="eyebrow">КАФЕ «ЕМА» · СИМФЕРОПОЛЬ</p>
+      <h1>От завтрака<br>до <em>ужина.</em></h1>
+      <p class="hero-intro">Сырники, пицца, роллы и чай на проспекте Александра Суворова.</p>
+      <div class="actions"><a class="button button-light" href="#menu" data-menu-category="all">Посмотреть меню</a><a class="button button-ghost" href="#visit">Как добраться</a></div>
+    </div>
+    <div class="shell hero-foot">Иллюстрация для демоверсии</div>
+  </section>
+  <div class="quick"><div class="shell quick-inner"><a href="#visit">пр-т Александра Суворова, 15, корп. 7</a><span>Ежедневно 10:00–22:00</span><a href="tel:+79785287015">+7 978 528-70-15</a></div></div>
+  <section id="about" class="shell section about" data-reveal>
+    <figure class="about-media"><img src="assets/interior.webp" alt="Визуализация кафе с деревянной мебелью и большими окнами" width="720" height="630" loading="lazy" decoding="async"><figcaption>Иллюстрация интерьера</figcaption></figure>
+    <div class="about-copy"><p class="eyebrow">О КАФЕ</p><h2>Ема в ЖК<br>«Черника»</h2>
+      <p>Кафе на проспекте Александра Суворова с завтраками, пиццей, роллами и пастой. В меню также есть десерты и фруктовые чаи.</p>
+      <ul class="facts"><li>Кофе с собой</li><li>Еда навынос</li><li>Парковка</li></ul>
+    </div>
+  </section>
+  <section class="favorites" aria-labelledby="favorites-title"><div class="shell section">
+    <div class="section-heading" data-reveal><div><p class="eyebrow">БЛЮДА И НАПИТКИ</p><h2 id="favorites-title">Что попробовать</h2></div><a class="button button-outline" href="#menu" data-menu-category="all">Всё меню</a></div>
+    <div class="feature-grid" data-reveal>
+      <a class="feature" href="#menu" data-menu-category="breakfast"><img src="assets/feature-breakfast.webp" alt="" width="520" height="620" loading="lazy" decoding="async"><div><p class="eyebrow">ЗАВТРАКИ</p><h3>Сырники</h3><p>С клубничным джемом и сметаной</p></div></a>
+      <a class="feature" href="#menu" data-menu-category="mains"><img src="assets/feature-mains.webp" alt="" width="520" height="620" loading="lazy" decoding="async"><div><p class="eyebrow">ОСНОВНЫЕ БЛЮДА</p><h3>Карбонара</h3></div></a>
+      <a class="feature" href="#menu" data-menu-category="tea"><img src="assets/feature-tea.webp" alt="" width="520" height="620" loading="lazy" decoding="async"><div><p class="eyebrow">ЧАЙ</p><h3>Апельсин и облепиха</h3></div></a>
+    </div><p class="minor">Подача блюд и напитков показана на иллюстрациях.</p>
+  </div></section>
+  <section id="menu" class="shell section menu-page" aria-labelledby="menu-title" tabindex="-1">
+    <div class="menu-intro">
+      <h2 id="menu-title">Меню<span>.</span></h2>
+      <p class="muted">Подборка блюд и напитков из каталога «Емы». Фотографии и описания подачи иллюстративны.</p>
+    </div>
+    <form class="menu-search" role="search" hidden>
+      <label for="dish-search">Поиск по названию</label>
+      <div class="search-input"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="dish-search" type="search" placeholder="Например, сырники" autocomplete="off"></div>
+    </form>
+    <div class="filters" role="group" aria-label="Категории меню"></div>
+    <p class="results muted" role="status" aria-live="polite"></p>
+    <div class="menu-grid" id="menu-items"></div>
+    <button type="button" class="button button-outline menu-more" aria-controls="menu-items" hidden>Показать ещё</button>
+    <div class="empty" hidden><h3>Блюдо не найдено</h3><p>Попробуйте другое название или сбросьте фильтры.</p><button type="button" class="button button-outline reset">Показать всё меню</button></div>
+    <noscript><p>Для поиска и просмотра демоменю включите JavaScript. Опубликованные позиции можно посмотреть на <a class="underlined" href="https://ema-prospekt-aleksandra-suvorova.clients.site/">странице кафе</a>.</p></noscript>
+    <aside class="menu-source">Цены из <a href="https://ema-prospekt-aleksandra-suvorova.clients.site/#services">каталога кафе</a>, проверены 23 ноября 2026 года. Перед визитом их можно уточнить <a href="tel:+79785287015">по телефону кафе</a>.</aside>
+  </section>
+  <section class="shell section gallery-section" aria-labelledby="gallery-title">
+    <div class="section-heading" data-reveal><div><p class="eyebrow">ГАЛЕРЕЯ</p><h2 id="gallery-title">За столом</h2></div><p class="muted">Визуальная концепция для демоверсии</p></div>
+    <div class="gallery" data-reveal>
+      <img src="assets/gallery-pizza.webp" alt="Пицца с томатами и базиликом, иллюстрация" width="720" height="630" loading="lazy" decoding="async">
+      <img src="assets/gallery-tea.webp" alt="Чай разливают по керамическим чашкам, иллюстрация" width="720" height="630" loading="lazy" decoding="async">
+      <img src="assets/gallery-rolls.webp" alt="Роллы с лососем, иллюстрация" width="720" height="630" loading="lazy" decoding="async">
+    </div>
+  </section>
+  <section id="visit" class="visit"><div class="shell section visit-grid">
+    <div data-reveal><p class="eyebrow">КОНТАКТЫ</p><h2>Загляните<br>в Ему</h2>
+      <dl class="details"><div><dt>Адрес</dt><dd>Симферополь, проспект Александра Суворова, 15, корп. 7</dd></div><div><dt>Часы работы</dt><dd>Ежедневно 10:00–22:00</dd></div><div><dt>Телефон кафе</dt><dd><a href="tel:+79785287015">+7 978 528-70-15</a></dd></div></dl>
+      <div class="actions"><a class="button button-light" href="tel:+79785287015">Позвонить</a><a class="button button-ghost" href="https://yandex.ru/maps?ll=34.09252139%2C44.98459962&amp;mode=routes&amp;rtext=~44.98459962%2C34.09252139&amp;ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D35121025020">Маршрут в Яндекс Картах</a></div>
+    </div>
+    <div class="map-panel" data-reveal>
+      <div class="map-stage" id="map-stage">
+        <svg class="map-pattern" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-18 98 Q126 43 198 160T440 157 M-16 215 Q110 165 193 58T438 64 M115 -40Q190 70 119 162T129 336 M280 -20Q250 95 283 167T280 341 M-30 289 Q51 230 174 251T430 223"/><path class="map-streets" d="M41 -10L52 38 79 65 62 120 13 166 M242 -21L226 46 197 90 222 146 250 217 224 300 M343 -5L366 89 321 123 342 184 396 221 M-10 62L72 35 116 49 166 28 233 38 320 29 421 7 M-10 250L76 212 113 233 171 196 210 210 266 188 338 204 413 168"/></svg>
+        <div class="map-card"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><p>Ема · ЖК «Черника»</p><button type="button" class="button button-small button-outline" id="load-map" hidden>Загрузить карту</button><noscript><a href="https://yandex.ru/maps/org/35121025020">Открыть карту</a></noscript></div>
+      </div>
+      <p>Данные заведения сверены по <a href="https://ema-prospekt-aleksandra-suvorova.clients.site/">странице кафе</a> и <a href="https://edagda.ru/simferopol/restaurant/ema">справочнику</a>.</p>
+    </div>
+  </div></section>
+</main>
+<footer class="footer">
+  <div class="shell footer-inner"><a class="wordmark" href="index.html" aria-label="Ема, главная">ема<span>.</span></a>
+  <nav aria-label="Ссылки в подвале"><a href="#menu" data-menu-category="all">Меню</a><a href="index.html#visit">Контакты</a><a href="https://ema-prospekt-aleksandra-suvorova.clients.site/">Страница кафе</a></nav>
+  <p>Неофициальное демо от Pixelto Studio</p></div>
+</footer>
+</body>
+</html>

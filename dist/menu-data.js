@@ -1,0 +1,61 @@
+// Each row: [name, description, price, photo filename, source path]. Omit source to label a price as an example.
+const menuGroups = [
+  { id: "breakfast", label: "Завтраки", items: [
+    ["Сырники","Сметана и клубничный джем.",370,"brunch-1.webp","syrniki/TYCOON_69562278914"],
+    ["Скрэмбл с лососем","Скрэмбл с лососем и чиабаттой.",330,"brunch-2.webp","skrembl-s-lososem/TYCOON_69562252771"],
+    ["Драники с пашотом и лососем","Картофельные драники, яйцо пашот и лосось.",490,"brunch-3.webp","draniki-s-yaitso-s-pashot-i-lososem/TYCOON_69562296937"],
+    ["Шакшука","Яйца в томатной основе.",330,"brunch-4.webp","shakshuka/TYCOON_69562302449"],
+    ["Шоколадные сырники","Шоколадные сырники с кремом.",470,"catalog-1.webp","shokoladnye-syrniki-s-nezhnym-kremom/TYCOON_85800079949"],
+    ["Английский завтрак","Горячее блюдо из раздела завтраков.",590,"catalog-2.webp","angliiskii-zavtrak/TYCOON_85800079777"],
+  ] },
+  { id: "mains", label: "Основные блюда", items: [
+    ["Карбонара","Классическая паста карбонара.",550,"brunch-7.webp","karbonara/TYCOON_80713036403"],
+    ["Удон с курицей и овощами","Пшеничная лапша с курицей и овощами.",460,"brunch-8.webp","udon-s-kuritsei-i-ovoschami/TYCOON_80713057275"],
+    ["Феттучини с курицей и грибами","Широкая паста с курицей и грибами.",570,"brunch-9.webp","fettuchini-s-kuritsei-i-gribami/TYCOON_80713028781"],
+    ["Орзо с креветками","Паста орзо с креветками.",670,"brunch-10.webp","pasta-orzo-s-krevetkami/TYCOON_80713023332"],
+    ["Пицца «Маргарита»","Томатная пицца с сыром.",540,"catalog-3.webp","pitstsa-margarita/TYCOON_85800087220"],
+    ["Пицца «Пепперони»","Пицца с пряной пепперони.",650,"brunch-12.webp","pitstsa-pepperoni/TYCOON_85800087637"],
+  ] },
+  { id: "snacks", label: "Закуски", items: [
+    ["Филадельфия классическая","Классический ролл из каталога «Емы».",550,"savory-1.webp","filadelfiya-klassika/TYCOON_63910541443"],
+    ["Креветки темпура","Креветки в хрустящем кляре.",720,"savory-2.webp","krevetki-tempura/TYCOON_85800080849"],
+    ["Брускетта с креветкой и авокадо","Хрустящий тост, креветка и авокадо.",290,"catalog-4.webp","brusketta-s-krevetkoi-i-avokado/TYCOON_85800080540"],
+    ["Сырные палочки","С ягодным соусом.",320,"catalog-5.webp","syrnye-palochki-s-yagodnym-sousom/TYCOON_85800080639"],
+    ["Наггетсы","Хрустящие наггетсы.",330,"catalog-6.webp","naggetsy/TYCOON_85800093728"],
+  ] },
+  { id: "salads", label: "Салаты", items: [
+    ["«Цезарь» с курицей","Классический салат с курицей.",540,"savory-7.webp","tsezar-s-kuritsei/TYCOON_85800082080"],
+    ["Греческий салат","Салат в средиземноморском стиле.",490,"savory-8.webp","salat-grecheskii/TYCOON_85800081125"],
+    ["Салат с запечённой свёклой","Со свёклой и сыром фета.",450,"savory-10.webp","salat-s-zapechennoi-svekloi-i-syrom-feta/TYCOON_85800081577"],
+    ["Салат с креветками и манго","Креветки и манго.",670,"catalog-7.webp","salat-s-krevetkoi-i-mango/TYCOON_85800081383"],
+    ["Салат с телятиной и баклажанами","Тёплый салат с телятиной и баклажанами.",690,"catalog-8.webp","salat-s-telyatinoi-i-baklazhanami/TYCOON_85800081396"],
+  ] },
+  { id: "desserts", label: "Десерты", items: [
+    ["Чизкейк Сан-Себастьян","Запечённый чизкейк с бананом.",450,"sweet-1.webp","chizkeik-san-sebastyan-s-bananom/TYCOON_85800094670"],
+    ["Шоколадный фондан","Тёплый шоколадный десерт.",480,"catalog-9.webp","shokoladnyi-fondan/TYCOON_85800094763"],
+    ["Торт «Монастырская изба»","Слоёный десерт с вишней.",290,"catalog-10.webp","tort-monastyrskaya-izba/TYCOON_85800094662"],
+    ["Меренговый рулет","Лёгкий десерт на основе меренги.",280,"catalog-11.webp","merengovyi-rulet/TYCOON_85800094658"],
+    ["Мороженое с фруктами","Мороженое с фруктовой подачей.",350,"catalog-12.webp","morozhennoe-s-fruktami/TYCOON_85800098896"],
+  ] },
+  { id: "coffee", label: "Кофе", items: [
+    ["Эспрессо","Небольшая порция насыщенного кофе.",120,"sweet-7.webp","espresso/TYCOON_85800125838"],
+    ["Американо","Эспрессо с горячей водой.",150,"sweet-8.webp","amerikano/TYCOON_85800127651"],
+    ["Капучино","Эспрессо с молоком и молочной пеной.",260,"sweet-9.webp","kapuchino/TYCOON_85800136360"],
+    ["Латте","Молочный кофейный напиток.",250,"sweet-10.webp","latte/TYCOON_85800136946"],
+    ["Флэт уайт","Кофе с молоком и выраженным вкусом эспрессо.",250,"sweet-11.webp","flet-uait/TYCOON_85800135856"],
+    ["Раф","Кофейный напиток со сливками.",300,"sweet-12.webp","raf/TYCOON_85800136951"],
+  ] },
+  { id: "tea", label: "Чай", items: [
+    ["Апельсин и облепиха","Авторский чай с цитрусом и ягодами.",400,"drinks-1.webp","avtorskii-chai-apelsin-oblepiha/TYCOON_85800115513"],
+    ["Гранат и клубника","Фруктово-ягодный авторский чай.",400,"catalog-13.webp","avtorskii-chai-granat-klubnika/TYCOON_85800125723"],
+    ["Заварной чай","Чёрный или зелёный на выбор.",300,"drinks-3.webp","chai-zavarnoi-chernyi-zelenyi/TYCOON_85800125772"],
+    ["Апельсин и клюква","Авторский цитрусово-ягодный чай.",400,"catalog-14.webp","avtorskii-chai-apelsin-klyukva/TYCOON_85800120371"],
+  ] },
+  { id: "cold", label: "Холодные напитки", items: [
+    ["Мохито без алкоголя","Освежающий напиток с лаймом и мятой.",350,"drinks-7.webp","mohito/TYCOON_85800137152"],
+    ["Грейпфрутовый фреш","Свежевыжатый грейпфрутовый сок.",350,"drinks-9.webp","greipfrutovyi-fresh/TYCOON_85800137181"],
+    ["Апельсиновый фреш","Свежевыжатый апельсиновый сок.",350,"catalog-15.webp","apelsinovyi-fresh/TYCOON_85800137168"],
+    ["Лимонад «Юдзу и апельсин»","Цитрусовый лимонад.",350,"drinks-12.webp","limonad-yudzu-apelsin/TYCOON_85800137085"],
+    ["Лимонад «Клубника и личи»","Холодный фруктовый лимонад.",350,"catalog-16.webp","limonad-klubnika-lichi/TYCOON_85800137073"],
+  ] },
+];
